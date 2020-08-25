@@ -31,12 +31,12 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 ### Association
--- has_many :meeting
--- has_many :MeetingParticipation
--- has_many :community
--- has_many :CommunityMessage
--- has_many :review
--- has_many :ReviewComment
+-- has_many :meetings
+-- has_many :MeetingParticipations
+-- has_many :communitys
+-- has_many :CommunityMessages
+-- has_many :reviews
+-- has_many :ReviewComments
 
 ##meetingテーブル
 |column|type|options|
