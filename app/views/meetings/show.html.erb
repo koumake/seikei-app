@@ -11,4 +11,5 @@
   <div class="meeting-detail">
       <%= @meeting.content %>
   </div>
+  <%= link_to "このオフ会に申し込む", "/users/#{@meeting.user_id}"  %>
 </div>
