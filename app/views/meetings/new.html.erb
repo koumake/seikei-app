@@ -1,0 +1,13 @@
+<div class="contents-main">
+  <div class="container">
+    <%= form_with model: @meeting, local: true do |f| %>
+      <h3>オフ会を募集する</h3>
+      <%= f.text_field :title, placeholder: "タイトル" %>
+      <%= f.text_field :date_time, placeholder: "日時" %>
+      <%= f.text_field :plece, placeholder: "場所" %>
+      <%= f.text_field :target_person, placeholder: "対象者" %>
+      <%= f.text_area :content %>
+      <%= f.submit "募集する" %>
+    <% end %>
+  </div>
+</div>
