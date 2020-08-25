@@ -6,9 +6,11 @@
         <li>
             <%= link_to '詳細をみる', meeting_path(meeting.id), method: :get %>
         </li>
+        <% if user_signed_in? && current_user.id == meeting.user_id %>
         <li>
           <%= link_to '募集を終了する', meeting_path(meeting.id), method: :delete %>
         </li>
+        <% end %>
       </ul>
     </div>
     <div class="meeting-title">
@@ -18,6 +20,7 @@
       <%= meeting.content %>
     </div>
     <div class="meeting-user">
+      <%= meeting.user.nickname %>
     </div>
   <% end %>
 </div>
