@@ -15,6 +15,9 @@ class MeetingsController < ApplicationController
     meeting.destroy
     redirect_to root_path
   end
+  def show
+    @meeting = Meeting.find(params[:id])
+  end
 
   private
   def meeting_params

@@ -4,6 +4,9 @@
     <div class="meeting-options">
       <ul>
         <li>
+            <%= link_to '詳細をみる', meeting_path(meeting.id), method: :get %>
+        </li>
+        <li>
           <%= link_to '募集を終了する', meeting_path(meeting.id), method: :delete %>
         </li>
       </ul>
@@ -11,14 +14,10 @@
     <div class="meeting-title">
       <%= meeting.title %>
     </div>
-    <div class="meeting-about">
-      <%= meeting.date_time %>
-      <%= meeting.plece %>
-      <%= meeting.number %>
-      <%= meeting.target_person %>
-    </div>
     <div class="meeting-detail">
       <%= meeting.content %>
+    </div>
+    <div class="meeting-user">
     </div>
   <% end %>
 </div>
