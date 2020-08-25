@@ -1,0 +1,4 @@
+<% @anotherEntries.each do |e| %>
+  <%= Message.find_by(id: e.room.message_ids.last).content %>
+  <%= Message.find_by(id: e.room.message_ids.last).user.nickname %>
+<% end %>
