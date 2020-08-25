@@ -53,13 +53,31 @@ Things you may want to cover:
 -- has_many :meeting_MeetingParticipations
 
 
-## meeting_MeetingParticipations テーブル
+## roomテーブル
 |column|type|options|
-|meeting|references|foreign_key: true|
-|MeetingParticipation|references|foreign_key: true|
+|name|string|
 ### Association
--- belongs_to :meeting
--- belongs_to :MeetingParticipation
+-- has_many :messages
+-- has_many :entries
+
+
+## messageテーブル
+|column|type|options|
+|content|text|
+|user|references|foreign_key: true|
+|room|references|foreign_key: true|
+### Association
+-- belongs_to user
+-- belongs_to room
+
+
+## entriesテーブル
+|column|type|options|
+|user|references|foreign_key: true|
+|room|references|foreign_key: true|
+### Association
+-- belongs_to :user
+-- belongs_to :room
 
 
 ##MeetingParticipationテーブル
@@ -73,7 +91,8 @@ Things you may want to cover:
 -- has_many :meeting, through: meeting_MeetingParticipations
 -- has_many :MeetingParticipations
 
-##communityテーブル
+
+## communityテーブル
 |column|type|options|
 |title|string|null: false|
 |genre|string|null: false|
