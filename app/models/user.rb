@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :meetings
+  has_many :messages
+  has_many :entries
   has_many :communitys
   has_many :CommunityMessages
   has_many :reviews
