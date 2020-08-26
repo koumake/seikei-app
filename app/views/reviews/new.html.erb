@@ -1,0 +1,42 @@
+<div class="review-content">
+  <div class="review-main">
+    <h2 class="main-title">
+      口コミを書く
+    </h2>
+    <%= form_with(model: @review, url: {controller: 'reviews', action: 'create'}, local: true) do |f| %>
+      <div class="review-title">
+        タイトル
+      </div>
+      <%= f.text_area :title %>
+      <div class="review-treatment">
+        整形部位
+      </div>
+      <%= f.text_area :treatment_site %>
+      <div class="review-date">
+        施術した日
+      </div>
+      <%= f.text_area :date%>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+      </label>
+      <div class="review-clinic">
+        施術を受けたクリニック
+      </div>
+      <%= f.text_area :clinic%>
+      <div class="review-docter">
+        担当医
+      </div>
+      <%= f.text_area :docter%>
+      <div class="review-price">
+        金額
+      </div>
+      <%= f.text_area :price%>
+      <div class="review-content">
+        内容
+      </div>
+      <%= f.text_area :content%>
+      <%= f.submit "口コミを投稿する"%>
+    <% end %>
+  </div>
+</div>

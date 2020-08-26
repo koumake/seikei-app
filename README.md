@@ -109,7 +109,7 @@ Things you may want to cover:
 -- belongs_to :group
 
 
-##reviewテーブル
+## reviewテーブル
 |column|type|options|
 |title|string|null: false|
 |treatment_site|string|null: false|
@@ -121,9 +121,9 @@ Things you may want to cover:
 |user|references|foreign_key: true|
 ### Association
 -- belongs_to :user
--- has_many :ReviewComment
+-- has_many :comments
 
-##ReviewCommentテーブル
+##commentテーブル
 |column|type|options|
 |content|text|null: false|
 |user|references|foreign_key: true|

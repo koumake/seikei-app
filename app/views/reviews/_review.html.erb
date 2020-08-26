@@ -1,0 +1,22 @@
+<div class="more">
+  <ul class="review-list">
+    <li>
+      <%= review.title%>
+    </li>
+    <li>
+       <%= image_tag review.image.variant(resize:'500x500'), class: 'review-image' if review.image.attached?%>
+    </li>
+    <li>
+      <%= review.treatment_site%>
+    </li>
+    <li>
+      <%= review.date%>
+    </li>
+    <li>
+      <%= review.clinic%>
+    </li>
+    
+  </ul>
+   <span>投稿者</span><%= review.user.nickname %>
+   <%= link_to "詳細を見る", review_path(review)%>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_135020) do
+ActiveRecord::Schema.define(version: 2020_08_26_140249) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -80,6 +80,20 @@ ActiveRecord::Schema.define(version: 2020_08_26_135020) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "treatment_site", null: false
+    t.string "date", null: false
+    t.string "clinic", null: false
+    t.string "docter", null: false
+    t.string "price", null: false
+    t.text "content", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -117,6 +131,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_135020) do
   add_foreign_key "meetings", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "reviews", "users"
   add_foreign_key "speaks", "groups"
   add_foreign_key "speaks", "users"
 end
