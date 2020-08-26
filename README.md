@@ -32,9 +32,9 @@ Things you may want to cover:
 |password|string|null: false|
 ### Association
 -- has_many :meetings
--- has_many :MeetingParticipations
--- has_many :communitys
--- has_many :CommunityMessages
+-- has_many :groups, through: group_users
+-- has_many :group_users
+-- has_many :GroupMessages
 -- has_many :reviews
 -- has_many :ReviewComments
 
@@ -80,36 +80,33 @@ Things you may want to cover:
 -- belongs_to :room
 
 
-##MeetingParticipationテーブル
-|column|type|options|
-|user|references|foreign_key: true|
-|meeting|references|foreign_key: true|
-|profile|text|null: false|
-|experience|string|null: false|
-### Association
--- belongs_to :user
--- has_many :meeting, through: meeting_MeetingParticipations
--- has_many :MeetingParticipations
 
-
-## communityテーブル
+## groupテーブル
 |column|type|options|
-|title|string|null: false|
-|genre|string|null: false|
-|content|text|null: false|
+|name|string|null: false|
 |user|references|foreign_key: true|
 ### Association
--- belongs_to :user
--- has_many :CommunityMessage
+-- has_many :users, through: group_users
+-- has_many :group_users
+-- has_many :GroupMessage
 
-##CommunityMessageテーブル
+
+## group_usersテーブル
+|column|type|options|
+|user|references|foreign_key; true|
+|group|references|foreign_key; true|
+### Association
+-- belongs_to :user
+-- belongs_to :group
+
+## GroupMessageテーブル
 |column|type|options|
 |content|text|null: false|
 |user|references|foreign_key: true|
-|community|references|foreign_key: true|
+|group|references|foreign_key: true|
 ### Association
 -- belongs_to :user
--- belongs_to :community
+-- belongs_to :group
 
 
 ##reviewテーブル
