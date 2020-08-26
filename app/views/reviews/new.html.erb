@@ -16,7 +16,10 @@
         施術した日
       </div>
       <%= f.text_area :date%>
-    
+      <label class="form-image">
+        <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+      </label>
       <div class="review-clinic">
         施術を受けたクリニック
       </div>
