@@ -25,4 +25,14 @@
        <%= image_tag @review.image.variant(resize:'500x500'), class: 'review-image' if @review.image.attached?%>
     </li>
   </ul>
+  <div class="container">
+    <% if current_user %>
+      <%= form_with(model: [@review, @comment], local: true) do |f| %>
+        <%= f.text_area :content, placeholder: "コメントする", rows: "2" %>
+        <%= f.submit "送信する" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
 </div>
