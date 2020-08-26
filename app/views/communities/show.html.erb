@@ -1,0 +1,8 @@
+<h1>コミュニティ</h1>
+<input type="text" id="chat-input" />
+<button id="button"></button>
+<div id="messages">
+  <% @communities.each do |community| %>
+    <%= render @communities %>
+  <% end %>
+</div>

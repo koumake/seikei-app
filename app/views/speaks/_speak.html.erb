@@ -1,0 +1,9 @@
+<div class="speak">
+  <div class="speak-user">
+    <%= speak.user.nickname %>
+  </div>
+  <div class="speak-content">
+    <%= speak.content %>
+  </div>
+  <%= image_tag speak.image.variant(resize:'500x500'), class: 'speak-image' if speak.image.attached? %>
+</div>

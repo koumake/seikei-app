@@ -1,0 +1,22 @@
+<div class="chat-group-form">
+  <h1>新規グループ作成</h1>
+  <%= form_with model: @group, local: true do |f| %>
+    <div class="group-form-field">
+      <div class="group-name">
+        <%= f.text_field :name,  placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+      チャットメンバー
+      <div class="group-member">
+        <select name="group[user_ids][]">
+          <option value="">チャットするユーザーを選択してください</option>
+            <% User.all.where.not(id: current_user.id).each do |user|%>
+              <option value=<%= user.id%>><%= user.nickname %></option>
+             <% end %>
+        </select>
+        <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    <%= f.submit "グループを作成する" %>
+  <% end %>
+</div>
+
