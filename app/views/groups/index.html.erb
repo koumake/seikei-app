@@ -2,6 +2,7 @@
   <% @groups.each do |group|%>
     <div class="group-name">
       <%= group.name %>
+      <%= link_to "チャットに参加する", group_speaks_path(group) %>
     </div>
   <% end %>
   <%= link_to "グループを作成する", new_group_path %>
