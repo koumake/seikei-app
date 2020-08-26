@@ -18,6 +18,6 @@ class SpeaksController < ApplicationController
 
   private
   def speak_params
-    params.require(:speak).permit(:content).merge(user_id: current_user.id)
+    params.require(:speak).permit(:content, :image).merge(user_id: current_user.id)
   end
 end
