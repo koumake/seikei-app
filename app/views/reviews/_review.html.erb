@@ -4,6 +4,9 @@
       <%= review.title%>
     </li>
     <li>
+       <%= image_tag review.image.variant(resize:'500x500'), class: 'review-image' if review.image.attached?%>
+    </li>
+    <li>
       <%= review.treatment_site%>
     </li>
     <li>
@@ -12,18 +15,8 @@
     <li>
       <%= review.clinic%>
     </li>
-    <li>
-      <%= review.docter%>
-    </li>
-    <li>
-      <%= review.price%>
-    </li>
-    <li>
-      <%= review.content%>
-    </li>
-    <li>
-       <%= image_tag review.image.variant(resize:'500x500'), class: 'review-image' if review.image.attached?%>
-    </li>
+    
   </ul>
    <span>投稿者</span><%= review.user.nickname %>
+   <%= link_to "詳細を見る", review_path(review)%>
 </div>

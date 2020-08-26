@@ -1,0 +1,28 @@
+<div class="review-detail">
+  <ul class="detail-list">
+    <li>
+      <%= @review.title%>
+    </li>
+    <li>
+      <%= @review.treatment_site%>
+    </li>
+    <li>
+      <%= @review.date%>
+    </li>
+    <li>
+      <%= @review.clinic%>
+    </li>
+    <li>
+      <%= @review.docter%>
+    </li>
+    <li>
+      <%= @review.price%>
+    </li>
+    <li>
+      <%= @review.content%>
+    </li>
+    <li>
+       <%= image_tag @review.image.variant(resize:'500x500'), class: 'review-image' if @review.image.attached?%>
+    </li>
+  </ul>
+</div>
