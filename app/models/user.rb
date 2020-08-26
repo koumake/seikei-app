@@ -7,8 +7,9 @@ class User < ApplicationRecord
   has_many :meetings
   has_many :messages
   has_many :entries
-  has_many :communitys
-  has_many :CommunityMessages
+  has_many :groups, through: :group_users
+  has_many :group_users
+  has_many :GroupMessages
   has_many :reviews
   has_many :ReviewComments
 end
