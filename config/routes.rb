@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'groups/new'
   get 'communities/show'
   devise_for :users
   resources :users
