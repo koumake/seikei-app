@@ -34,7 +34,7 @@ Things you may want to cover:
 -- has_many :meetings
 -- has_many :groups, through: group_users
 -- has_many :group_users
--- has_many :GroupMessages
+-- has_many :speaks
 -- has_many :reviews
 -- has_many :ReviewComments
 
@@ -88,7 +88,7 @@ Things you may want to cover:
 ### Association
 -- has_many :users, through: group_users
 -- has_many :group_users
--- has_many :GroupMessage
+-- has_many :speaks
 
 
 ## group_usersテーブル
@@ -99,7 +99,7 @@ Things you may want to cover:
 -- belongs_to :user
 -- belongs_to :group
 
-## GroupMessageテーブル
+## speakテーブル
 |column|type|options|
 |content|text|null: false|
 |user|references|foreign_key: true|

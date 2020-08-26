@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GroupMessageTest < ActiveSupport::TestCase
+class SpeakTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
