@@ -2,6 +2,7 @@
   <ul class="detail-list">
     <li>
       <%= @review.title%>
+      <%= link_to @review.user.nickname, " /users/#{@review.user_id}"%>
     </li>
     <li>
       <%= @review.treatment_site%>
