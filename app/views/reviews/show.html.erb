@@ -2,6 +2,7 @@
   <ul class="detail-list">
     <li>
       <%= @review.title%>
+      <%= link_to @review.user.nickname, " /users/#{@review.user_id}"%>
     </li>
     <li>
       <%= @review.treatment_site%>
@@ -25,4 +26,25 @@
        <%= image_tag @review.image.variant(resize:'500x500'), class: 'review-image' if @review.image.attached?%>
     </li>
   </ul>
+  <div class="container">
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.content %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    <% if current_user %>
+      <%= form_with(model: [@review, @comment], local: true) do |f| %>
+        <%= f.text_area :content, placeholder: "コメントする", rows: "2" %>
+        <%= f.submit "送信する" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
 </div>

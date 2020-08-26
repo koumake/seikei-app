@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :speaks
   has_many :reviews
-  has_many :ReviewComments
+  has_many :comments
 end
