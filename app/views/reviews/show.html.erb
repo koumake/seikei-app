@@ -23,7 +23,9 @@
       <%= @review.content%>
     </li>
     <li>
-       <%= image_tag @review.image.variant(resize:'500x500'), class: 'review-image' if @review.image.attached?%>
+       <% review.images.each do |image| %>
+         <%= image_tag image, class: 'images' %>
+       <% end %>
     </li>
   </ul>
   <div class="container">

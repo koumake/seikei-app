@@ -18,7 +18,7 @@
       <%= f.text_area :date%>
       <label class="form-image">
         <span class="image-file">画像</span>
-      <%= f.file_field :image, class: 'hidden' %>
+      <%= f.file_field :images, name: 'review[images][]', id: 'review_image' %>
       </label>
       <div class="review-clinic">
         施術を受けたクリニック
@@ -37,6 +37,7 @@
       </div>
       <%= f.text_area :content%>
       <%= f.submit "口コミを投稿する"%>
+      <div id="image-list"></div>
     <% end %>
   </div>
 </div>
