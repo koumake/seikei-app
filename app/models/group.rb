@@ -3,5 +3,5 @@ class Group < ApplicationRecord
   has_many :users, through: :group_users
   has_many :speaks
 
-  validates :name
+  validates :name, presence: true
 end
