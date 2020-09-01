@@ -2,8 +2,8 @@
   <h1>新規グループ作成</h1>
   <%= form_with model: @group, local: true do |f| %>
     <div class="group-form-field">
-      <div class="group-name">
-        <%= f.text_field :name,  placeholder: 'チャットルーム名を入力してください'%>
+      <div class="form-group">
+        <%= f.text_field :name,  placeholder: 'チャットルーム名を入力してください', class: "form-control"%>
       </div>
       チャットメンバー
       <div class="group-member">
@@ -16,7 +16,7 @@
         <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
-    <%= f.submit "グループを作成する" %>
+    <%= f.submit "グループを作成する", class: "btn btn-primary" %>
   <% end %>
 </div>
 

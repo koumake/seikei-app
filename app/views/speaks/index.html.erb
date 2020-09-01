@@ -4,14 +4,14 @@
   </div>
   
   <%= form_with model: [@group, @speak], html: {class: "form"}, local: true do |f| %> 
-    <div class="form-input">
-       <%= f.text_field :content, placeholder: 'type a message' %>
+    <div class="form-group">
+       <%= f.text_field :content, placeholder: 'つぶやきを入力', class: "form-control" %>
        <label class="form-image">
          <span class="image-file">画像</span>
-         <%= f.file_field :image, class: 'hidden' %>
+         <%= f.file_field :image, class: 'hidden', class: "form-control" %>
        </label>
     </div>
-    <%= f.submit '送信', class: 'form-submit' %>
+    <%= f.submit '送信', class: "btn btn-primary" %>
   <% end %>
   <br>
   <br>

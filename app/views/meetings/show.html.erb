@@ -3,13 +3,36 @@
       <%= @meeting.title %>
   </div>
   <div class="meeting-about">
-      <%= @meeting.date_time %>
-      <%= @meeting.plece %>
-      <%= @meeting.number %>
-      <%= @meeting.target_person %>
-  </div>
-  <div class="meeting-detail">
-      <%= @meeting.content %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="row">タイトル</th>
+          <td class="detail-value"><%= @meeting.title %></td>
+        </tr>
+        <tr>
+          <th scope="row">日時</th>
+          <td class="detail-value"><%= @meeting.date_time %></td>
+        </tr>
+        <tr>
+          <th scope="row">場所</th>
+          <td class="detail-value"><%= @meeting.plece %></td>
+        </tr>
+        <tr>
+          <th scope="row">対象者</th>
+          <td class="detail-value"><%= @meeting.target_person %></td>
+        </tr>
+        <tr>
+          <th scope="row">内容</th>
+          <td class="detail-value"><%= @meeting.content %></td>
+        </tr>
+        <tr>
+          <th scope="row">募集ユーザー</th>
+          <td class="detail-value"><%= @meeting.user.nickname %></td>
+        </tr>
+        
+      </thead>
+    </table>
+      
   </div>
   <%= link_to "このオフ会に申し込む", "/users/#{@meeting.user_id}"  %>
 </div>

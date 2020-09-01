@@ -1,24 +1,38 @@
 <div class="more">
-  <ul class="review-list">
-    <li>
-      <%= review.title%>
-    </li>
-    <li>
-       <% review.images.each do |image| %>
-         <%= image_tag image, class: 'images' %>
-       <% end %>
-    </li>
-    <li>
-      <%= review.treatment_site%>
-    </li>
-    <li>
-      <%= review.date%>
-    </li>
-    <li>
-      <%= review.clinic%>
-    </li>
-    
-  </ul>
-   <span>投稿者</span><%= review.user.nickname %>
-   <%= link_to "詳細を見る", review_path(review)%>
+   
+   <table class="table">
+      <thead>
+        <tr>
+          <th scope="row">タイトル</th>
+          <td class="detail-value"><%= review.title %></td>
+        </tr>
+        <tr>
+          <th scope="row">写真</th>
+          <td class="detail-value">
+            <% review.images.each do |image| %>
+              <%= image_tag image, class: 'images' %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">施術部位</th>
+          <td class="detail-value"><%= review.treatment_site %></td>
+        </tr>
+        <tr>
+          <th scope="row">施術を受けた日</th>
+          <td class="detail-value"><%= review.date %></td>
+        </tr>
+        <tr>
+          <th scope="row">施術を受けたクリニック</th>
+          <td class="detail-value"><%= review.clinic %></td>
+        </tr>
+        <tr>
+          <th scope="row">投稿者</th>
+          <td class="detail-value"><%= review.user.nickname %></td>
+        </tr>
+        
+      </thead>
+    </table>
+    <br>
+    <br>
 </div>
