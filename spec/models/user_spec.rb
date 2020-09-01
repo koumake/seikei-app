@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
     it "nicknameが空では登録できないこと" do
       @user.nickname = nil
       @user.valid?
-      expect(@user.errors.full_messages).to include("")
+      expect(@user.errors.full_messages).to include("Nickname can't be blank")
     end
 
     it "emailが空では登録できないこと" do
@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
       @user.save
       another_user = FactoryBot.build(:user, email: @user.email)
       another_user.valid?
-    expect(another_user.errors.full_messages).to include("Email has already been taken")
+      expect(another_user.errors.full_messages).to include("Email has already been taken")
     end
   end
 end
