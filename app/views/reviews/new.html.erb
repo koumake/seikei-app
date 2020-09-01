@@ -7,37 +7,52 @@
       <div class="review-title">
         タイトル
       </div>
-      <%= f.text_area :title %>
+      <div class="form-group">
+        <%= f.text_area :title, class: "form-control" %>
+      </div>
       <div class="review-treatment">
         整形部位
       </div>
-      <%= f.text_area :treatment_site %>
+      <div class="form-group">
+        <%= f.text_area :treatment_site, class: "form-control" %>
+      </div>
       <div class="review-date">
         施術した日
       </div>
-      <%= f.text_area :date%>
+      <div class="form-group">
+        <%= f.text_area :date, class: "form-control"%>
+      </div>
       <label class="form-image">
         <span class="image-file">画像</span>
       <%= f.file_field :images, name: 'review[images][]', id: 'review_image' %>
       </label>
+      <div id="image-list"></div>
       <div class="review-clinic">
         施術を受けたクリニック
       </div>
-      <%= f.text_area :clinic%>
+      <div class="form-group">
+        <%= f.text_area :clinic, class: "form-control"%>
+      </div>
       <div class="review-docter">
         担当医
       </div>
-      <%= f.text_area :docter%>
+      <div class="form-group">
+        <%= f.text_area :docter, class: "form-control"%>
+      </div>
       <div class="review-price">
         金額
       </div>
-      <%= f.text_area :price%>
+      <div class="form-group">
+        <%= f.text_area :price, class: "form-control"%>
+      </div>
       <div class="review-content">
         内容
       </div>
-      <%= f.text_area :content%>
-      <%= f.submit "口コミを投稿する"%>
-      <div id="image-list"></div>
+      <div class="form-group">
+        <%= f.text_area :content, class: "form-control"%>
+      </div>
+      <%= f.submit "口コミを投稿する", class: "btn btn-primary" %>
+      
     <% end %>
   </div>
 </div>
