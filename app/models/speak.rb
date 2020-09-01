@@ -4,7 +4,7 @@ class Speak < ApplicationRecord
   has_one_attached :image
 
   
-  validates :name, presence: true
+  validates :content, presence: true
   
 
 
