@@ -38,6 +38,12 @@ Things you may want to cover:
 |nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 ### Association
 -- has_many :meetings
 -- has_many :groups, through: group_users
