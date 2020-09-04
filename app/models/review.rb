@@ -3,7 +3,7 @@ class Review < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many_attached :images
-  validates :images_presence
+  validate :images_presence
 
   with_options presence: true do
     validates :title
@@ -13,7 +13,6 @@ class Review < ApplicationRecord
     validates :docter
     validates :price
     validates :content
-    validates :images
   end
 
   def images_presence
