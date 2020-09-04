@@ -77,28 +77,27 @@ Things you may want to cover:
 * クリニック一覧表示機能
 * クリニックを予約できる機能
 
+## ER図
+https://gyazo.com/a7fbc2109bb349e22a597b59209ec894
+![ER図](https://gyazo.com/a7fbc2109bb349e22a597b59209ec894)
+
 ## ローカルでの動作方法
 
 # テーブル設計
 
 ## usersテーブル
-|column|type|options|
-|nickname|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
-
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | nickname | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
 ### Association
--- has_many :meetings
--- has_many :groups, through: group_users
--- has_many :group_users
--- has_many :speaks
--- has_many :reviews
--- has_many :ReviewComments
+- has_many :meetings
+- has_many :groups, through: group_users
+- has_many :group_users
+- has_many :speaks
+- has_many :reviews
+- has_many :ReviewComments
 
 ## meetingテーブル
 |column|type|options|
@@ -111,69 +110,76 @@ Things you may want to cover:
 |content|text|null: false|
 |user|references|foreign_key: true|
 ### Association
--- belongs_to :user
--- has_many :MeetingParticipations, through: meeting_MeetingParticipations
--- has_many :meeting_MeetingParticipations
+- belongs_to :user
+- has_many :MeetingParticipations, through: meeting_MeetingParticipations
+- has_many :meeting_MeetingParticipations
 
 
 ## roomテーブル
 |column|type|options|
 |name|string|
+| -------- | ------ | ----------- |
 ### Association
--- has_many :messages
--- has_many :entries
+- has_many :messages
+- has_many :entries
 
 
 ## messageテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |content|text|
 |user|references|foreign_key: true|
 |room|references|foreign_key: true|
 ### Association
--- belongs_to user
--- belongs_to room
+- belongs_to user
+- belongs_to room
 
 
 ## entriesテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |user|references|foreign_key: true|
 |room|references|foreign_key: true|
 ### Association
--- belongs_to :user
--- belongs_to :room
+- belongs_to :user
+- belongs_to :room
 
 
 
 ## groupテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |name|string|null: false|
 |user|references|foreign_key: true|
 ### Association
--- has_many :users, through: group_users
--- has_many :group_users
--- has_many :speaks
+- has_many :users, through: group_users
+- has_many :group_users
+- has_many :speaks
 
 
 ## group_usersテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |user|references|foreign_key; true|
 |group|references|foreign_key; true|
 ### Association
--- belongs_to :user
--- belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## speakテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |content|text|null: false|
 |user|references|foreign_key: true|
 |group|references|foreign_key: true|
 ### Association
--- belongs_to :user
--- belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 
 ## reviewテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |title|string|null: false|
 |treatment_site|string|null: false|
 |date|string|null: false|
@@ -183,14 +189,15 @@ Things you may want to cover:
 |content|text|null: false|
 |user|references|foreign_key: true|
 ### Association
--- belongs_to :user
--- has_many :comments
+- belongs_to :user
+- has_many :comments
 
-##commentテーブル
+## commentテーブル
 |column|type|options|
+| -------- | ------ | ----------- |
 |content|text|null: false|
 |user|references|foreign_key: true|
 |review|references|foreign_key: true|
 ### Association
--- belongs_to :user
--- belongs_to :review
+- belongs_to :user
+- belongs_to :review
