@@ -31,9 +31,9 @@ Things you may want to cover:
 
 
 
-#テーブル設計
+# テーブル設計
 
-##usersテーブル
+## usersテーブル
 |column|type|options|
 |nickname|string|null: false|
 |email|string|null: false|
@@ -46,7 +46,7 @@ Things you may want to cover:
 -- has_many :reviews
 -- has_many :ReviewComments
 
-##meetingテーブル
+## meetingテーブル
 |column|type|options|
 |title|string|null: false|
 |date_time|string|null: false|
