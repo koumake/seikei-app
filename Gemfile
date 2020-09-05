@@ -64,3 +64,7 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem "aws-sdk-s3", require: false
+group :production do
+  gem 'rails_12factor'
+end

@@ -79,7 +79,6 @@ Things you may want to cover:
 
 ## ER図
 https://gyazo.com/a7fbc2109bb349e22a597b59209ec894
-![ER図](https://gyazo.com/a7fbc2109bb349e22a597b59209ec894)
 
 ## ローカルでの動作方法
 
@@ -97,7 +96,9 @@ https://gyazo.com/a7fbc2109bb349e22a597b59209ec894
 - has_many :group_users
 - has_many :speaks
 - has_many :reviews
-- has_many :ReviewComments
+- has_many :comments
+- has_many :messages
+- has_many :entries
 
 ## meetingテーブル
 |column|type|options|
@@ -111,14 +112,12 @@ https://gyazo.com/a7fbc2109bb349e22a597b59209ec894
 |user|references|foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :MeetingParticipations, through: meeting_MeetingParticipations
-- has_many :meeting_MeetingParticipations
 
 
 ## roomテーブル
 |column|type|options|
-|name|string|
 | -------- | ------ | ----------- |
+|name|string|
 ### Association
 - has_many :messages
 - has_many :entries
