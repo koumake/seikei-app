@@ -1,4 +1,5 @@
 <div class="speak">
+  <div class="bg-info text-white">
   <div class="speak-user">
     ユーザー名…<%= speak.user.nickname %>
   </div>
@@ -6,6 +7,7 @@
     <%= speak.content %>
   </div>
   <%= image_tag speak.image.variant(resize:'300x300'), class: 'speak-image' if speak.image.attached? %>
+  </div>
   <br>
   <br>
 </div>

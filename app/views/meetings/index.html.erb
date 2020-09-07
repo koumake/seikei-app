@@ -1,4 +1,8 @@
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+<h2>募集中オフ会一覧</h2>
+<br>
+<br>
 <div class="contents-main">
   <% @meetings.each do |meeting| %>
     
@@ -32,6 +36,10 @@
         <% end %>
       </ul>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
     
   <% end %>
 </div>
