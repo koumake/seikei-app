@@ -81,6 +81,13 @@ Things you may want to cover:
 https://gyazo.com/a7fbc2109bb349e22a597b59209ec894
 
 ## ローカルでの動作方法
+`git clone https://github.com/koumake/seikei-app`
+`bundle install`
+`yarn install`
+`rails db:create`
+`rails db:migrate`
+`rails s`
+
 
 # テーブル設計
 

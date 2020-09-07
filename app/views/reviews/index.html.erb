@@ -1,3 +1,21 @@
+<%= render "shared/header" %>
+
+<table class="table table-borderless">
+  <tr><th><%= image_tag "seikei-intro1.png", class: "img-thumbnail" %></th><th><%= image_tag "seikei-intro1.png", class: "img-thumbnail" %></th></tr>
+  <tr><th>美容整形で失敗しない！</th><th>整形友達ができる！</th></tr>
+  <tr><td>・ステマなしの口コミが掲載<br>・整形した人からチャットで話を聞ける</td><td>・グループチャットで整形仲間ができる‼︎<br>・整形仲間と気軽にオフ会ができる‼︎</td></tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+
+<div class="jumbotron">
+  <h2>オススメの施術</h2>
+</div>
+<%= link_to '口コミを投稿する', new_review_path %>
+<br>
+<br>
 <div class="reviews">
   <%= @reviews.each do |review|%>
     <%= render partial: "review", locals: {review: review}%>

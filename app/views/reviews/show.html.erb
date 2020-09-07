@@ -1,36 +1,26 @@
 <div class="review-detail">
-  <ul class="detail-list">
-    <li>
-      <%= @review.title%>
-      <%= link_to @review.user.nickname, " /users/#{@review.user_id}"%>
-    </li>
-    <li>
-      <%= @review.treatment_site%>
-    </li>
-    <li>
-      <%= @review.date%>
-    </li>
-    <li>
-      <%= @review.clinic%>
-    </li>
-    <li>
-      <%= @review.docter%>
-    </li>
-    <li>
-      <%= @review.price%>
-    </li>
-    <li>
-      <%= @review.content%>
-    </li>
-    <li>
-       <% review.images.each do |image| %>
-         <%= image_tag image, class: 'images' %>
-       <% end %>
-    </li>
-  </ul>
+  <table class="table">
+    <tr><td>タイトル</td><td><%= @review.title %></td></tr>
+    <tr><td>投稿者</td><td><%= @review.user.nickname %></td></tr>
+    <tr><td>施術部位</td><td><%= @review.treatment_site %></td></tr>
+    <tr>
+      <td>写真</td>
+      <td>
+        <% @review.images.each do |image| %>
+            <%= image_tag image, class: 'images' %>
+        <% end %>
+      </td>
+    </tr>
+    <tr><td>施術した日</td><td><%= @review.date %></td></tr>
+    <tr><td>施術したクリニック</td><td><%= @review.clinic %></td></tr>
+    <tr><td>担当医</td><td><%= @review.docter %></td></tr>
+    <tr><td>料金</td><td><%= @review.price %></td></tr>
+    <tr><td>感想</td><td><%= @review.content %></td></tr>
+  </table>
+  
   <div class="container">
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h2>＜コメント一覧＞</h2>
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>

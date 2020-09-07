@@ -3,8 +3,7 @@
    <table class="table">
       <thead>
         <tr>
-          <th scope="row">タイトル</th>
-          <td class="detail-value"><%= review.title %></td>
+          <th scope="row"><%= link_to review.title, review_path(review.id) %></th>
         </tr>
         <tr>
           <th scope="row">写真</th>
