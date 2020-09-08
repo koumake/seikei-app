@@ -19,6 +19,11 @@ class ReviewsController < ApplicationController
     @comment = Comment.new
     @comments = @review.comments.includes(:user)
   end
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to root_path
+  end
 
   private
   def review_params

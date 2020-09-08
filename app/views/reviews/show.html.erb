@@ -17,7 +17,9 @@
     <tr><td>料金</td><td><%= @review.price %></td></tr>
     <tr><td>感想</td><td><%= @review.content %></td></tr>
   </table>
-  
+  <% if user_signed_in? && current_user.id == @review.user_id %>
+    <%= link_to '削除', review_path(@review.id), method: :delete %>
+  <% end %>
   <div class="container">
     <div class="comments">
       <h2>＜コメント一覧＞</h2>
