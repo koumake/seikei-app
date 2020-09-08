@@ -9,7 +9,7 @@
           <th scope="row">写真</th>
           <td class="detail-value">
             <% review.images.each do |image| %>
-              <%= image_tag image, class: 'images' %>
+              <%= image_tag image.variant(resize:'300x300'), class: 'images' %>
             <% end %>
           </td>
         </tr>
