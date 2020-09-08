@@ -1,5 +1,8 @@
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 
+<div class="new-meeting">
+  <%= link_to 'オフ会を募集する', new_meeting_path %>
+</div>
 <h2>募集中オフ会一覧</h2>
 <br>
 <br>
@@ -42,4 +45,6 @@
     <br>
     
   <% end %>
+  <%= link_to 'オフ会を募集する', new_meeting_path %>
+
 </div>
