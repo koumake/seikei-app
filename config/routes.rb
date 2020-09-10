@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :reviews do
     resources :comments
   end
+  resources :chats do
+    resources :talks
+  end
+
   
   mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
