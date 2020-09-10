@@ -1,0 +1,12 @@
+<div class="contents">
+  <h2>チャットグループ一覧</h2>
+  <% @chats.each do |chat|%>
+    <div class="container">
+      <%= link_to chat.name, chat_path(chat.id) %>
+    </div>
+    <br>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to '新規チャットグループを作る', new_chat_path %>
+</div>

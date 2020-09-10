@@ -1,0 +1,10 @@
+<h3>mini_talk_app</h3>
+<%= form_with(model: [@chat, @talk], local: true) do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit '送信' %>
+<% end %>
+<div id='messages'>
+  <% @talks.reverse_each do |talk| %>
+    <p><%= talk.text %></p>
+  <% end %>
+</div>

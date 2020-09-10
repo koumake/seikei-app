@@ -1,0 +1,10 @@
+<div class="contents">
+  <div class="container">
+    <%= form_with(model: @chat, url: {controller: 'chats', action: 'create'}, local: true) do |f| %>
+      <h3>グループを作成する</h3>
+      <%= f.text_area :name, placeholder: "グループ名" %>
+      <%= f.submit "作成する" %>
+
+    <% end %>
+  </div>
+</div>
