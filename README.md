@@ -33,7 +33,11 @@ Things you may want to cover:
 
 ## URL
 https://seikei-app.herokuapp.com/
-## テスト用アカウント
+## ログイン情報
+#### basic認証
+* ユーザー名…seikei3145
+* パスワード…seikei4869
+#### テスト用アカウント
 * email…cccc@3333
 * passward…cccc3333
 ## このアプリの利用方法
