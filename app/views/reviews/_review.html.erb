@@ -6,7 +6,7 @@
           <th scope="row"><%= link_to review.title, review_path(review.id) %></th>
         </tr>
         <tr>
-          <th scope="row">写真</th>
+          <th scope="row">画像</th>
           <td class="detail-value">
             <% review.images.each do |image| %>
               <%= image_tag image.variant(resize:'300x300'), class: 'images' %>
