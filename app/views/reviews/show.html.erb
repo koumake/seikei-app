@@ -22,7 +22,7 @@
   <% end %>
   <div class="container">
     <div class="comments">
-      <h2>＜コメント一覧＞</h2>
+      <h2>＜コメント表示＞</h2>
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
@@ -38,7 +38,7 @@
         <%= f.submit "送信する" %>
       <% end %>
     <% else %>
-      <strong><p>※※※ コメントするには新規登録/ログインが必要です ※※※</p></strong>
+      <strong><p>※※※ コメントするには新規登録/ログインが必要になります ※※※</p></strong>
     <% end %>
   </div>
 </div>

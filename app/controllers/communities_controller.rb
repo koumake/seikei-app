@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
   def show
-    @communities = Community.all
+    @communities = Community.find()
   end
 end

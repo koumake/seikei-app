@@ -5,10 +5,10 @@
       <div class="form-group">
         <%= f.text_field :name,  placeholder: 'チャットルーム名を入力してください', class: "form-control"%>
       </div>
-      チャットメンバー
+      チャットするメンバー
       <div class="group-member">
         <select name="group[user_ids][]">
-          <option value="">チャットするユーザーを選択してください</option>
+          <option value="">チャットするユーザーを選んでください</option>
             <% User.all.where.not(id: current_user.id).each do |user|%>
               <option value=<%= user.id%>><%= user.nickname %></option>
              <% end %>
